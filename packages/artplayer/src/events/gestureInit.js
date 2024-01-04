@@ -82,6 +82,10 @@ export default function gestureInit(art, events) {
             }
         };
 
+        events.proxy($progress, 'contextmenu', (event) => {
+            event.preventDefault();
+        });
+
         events.proxy($progress, 'touchstart', (event) => {
             touchTarget = $progress;
             onTouchStart(event);
